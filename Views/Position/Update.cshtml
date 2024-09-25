@@ -1,0 +1,56 @@
+﻿@model VotingApp.Models.RequestModels.PositionRequestModel
+
+@{
+    ViewData["Title"] = "Update Position";
+}
+
+<h2 class="text-primary pt-3">@ViewData["Title"]</h2>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form asp-action="Update" method="post">
+            @* <div asp-validation-summary="ModelOnly" class="text-danger"></div> *@
+            <input type="hidden" name="id" value="@ViewBag.PositionId" />
+            <div class="form-group mb-3">
+                <label asp-for="Name" class="control-label"></label>
+                <input asp-for="Name" class="form-control" />
+                <span asp-validation-for="Name" class="text-danger"></span>
+            </div>
+            <div class="form-group mb-3">
+                <label asp-for="Description" class="control-label"></label>
+                <input asp-for="Description" class="form-control" />
+                <span asp-validation-for="Description" class="text-danger"></span>
+            </div>
+            <div>
+                <label for="IsAvailable">Status</label>
+                <select asp-for="IsAvailable" class="form-control">
+                    <option value="">Select Status</option>
+                    <option value="true">Open</option>
+                    <option value="false">Closed</option>
+                </select>
+                <span asp-validation-for="IsAvailable" class="text-danger"></span>
+            </div>
+            <div class="form-group mb-3">
+                <label for="ElectionId">Election</label>
+                <select asp-for="ElectionId" asp-items="ViewBag.Election" class="form-control"></select>
+            </div>
+            <div class="form-group mb-3">
+                <label for="CourseId">Rule</label>
+                <select asp-for="RuleId" asp-items="ViewBag.Rule" class="form-control"></select>
+            </div>
+
+
+            <button type="submit" class="btn btn-primary" style="width:150px">Update</button>
+            <a asp-controller="Position" asp-action="GetAll" class="btn btn-secondary" style="width:150px">
+                Back to List
+            </a>
+        </form>
+    </div>
+</div>
+
+
+@section Scripts {
+    @{
+        <partial name="_ValidationScriptsPartial" />
+    }
+}

@@ -1,0 +1,58 @@
+﻿@model PaginatedList<VotingApp.Models.ResponseModels.PositionResponseModel>
+@{
+    ViewData["Title"] = "Positions";
+}
+<div class="col-6">
+    <a asp-controller="Election" asp-action="GetAll" asp-route-pageNumber="@ViewBag.PageNo" class="btn btn-primary">
+        <i class="bi bi-plus-circle"></i> Back
+    </a>
+</div>
+@foreach (var item in Model)
+{
+    <h4 style="text-align: center;">@item.Election?.Name Session</h4>
+    <div class="container" style="background-color: rgb(229, 224, 226); margin-top: 50px; margin-bottom: 50px; padding: 20px; border-radius: 10px;">
+        <div class="row">
+            <div class="col col-xs-6 col-lg-7">
+                <h5><a asp-action="GetContestants" asp-route-positionId="@item.Id" style="color:black;">@item.Name</a></h5>
+                <div>
+                    @item.Description
+                </div>
+                <div>
+                    Application: 
+                    @{
+                        var apply = item.IsAvailable ? "Open" : "Closed";
+                    }
+                    @apply
+                </div>
+                <div>
+                    Criteria:
+                    @{
+                        var crit = $"Gender: {item.Rule?.Gender}, Course: {item.Rule?.Course?.Name} CGPA: Minimum of {item.Rule?.MinCGPA}, Level: {item.Rule?.MinLevel} - {item.Rule?.MaxLevel}";
+                    }
+                    @crit
+                </div>
+            </div>
+        </div>
+    </div>
+}
+@if (!Model.Any())
+{
+    <p>No Active Positions</p>
+}
+
+@{
+    var prevDisabled = !Model.HasPreviousPage ? "disabled" : "";
+    var nextDisabled = !Model.HasNextPage ? "disabled" : "";
+}
+
+<div class="d-flex justify-content-center">
+    <a asp-action="Details" asp-route-electionId = "@ViewBag.ElectionId" asp-route-pageNumber="@(Model.PageIndex - 1)" class="btn btn-default @prevDisabled">
+        Previous
+    </a>
+    <div class="btn" style="cursor: default;">
+        Page @Model.PageIndex of @Model.TotalPages
+    </div>
+    <a asp-action="Details" asp-route-electionId="@ViewBag.ElectionId" asp-route-pageNumber="@(Model.PageIndex + 1)" class="btn btn-default @nextDisabled">
+        Next
+    </a>
+</div>

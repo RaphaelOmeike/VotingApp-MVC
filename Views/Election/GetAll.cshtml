@@ -1,0 +1,95 @@
+﻿@model VotingApp.PaginatedList<VotingApp.Models.ResponseModels.ElectionResponseModel>
+@{
+    ViewData["Title"] = "Index";
+}
+<div class="row pt-4">
+    <div class="col-6">
+        <h2 class="text-primary">ELECTIONS</h2>
+    </div>
+    
+    @if (User.IsInRole("Admin"))
+    {
+        <div class="col-6 text-end">
+            <a asp-controller="Election" asp-action="Create" class="btn btn-primary">
+                <i class="bi bi-plus-circle"></i> &nbsp; Create New Election
+            </a>
+        </div>
+
+    }
+
+</div>
+@foreach (var item in Model)
+{
+    <div class="container" style="background-color: rgba(130, 129, 133, 0.6); margin-top: 50px; margin-bottom: 50px; padding: 20px; border-radius: 10px;">
+        <div class="row">
+            <div class="col col-xs-6 col-lg-5">
+                <img src="~/Images/@item.ImageUrl" style="max-width:400px; max-height: 400px;" />
+            </div>
+            <div class="col col-xs-6 col-lg-7">
+                <h5><a asp-action="Details" asp-route-electionId="@item.Id" asp-route-electionPageNo="@ViewBag.PageNo" asp-controller="Election" style="color:black;">@item.Name @item.Session?.Name Session</a></h5>
+                <div>
+                    @item.Description
+                </div>
+                <div>
+                    Starting: @item.StartDate.ToLongDateString() @item.StartDate.ToShortTimeString()
+                </div>
+                <div>
+                    Ending: @item.EndDate.ToLongDateString() @item.EndDate.ToShortTimeString()
+                </div>
+                <div>
+                    @if (DateTime.Now < item.StartDate)
+                    {
+                        <h2>Starting soon!!</h2>
+                    }
+                </div>
+                <div>
+                    Status:
+                    @{
+                        var status = item.IsClosed ? "Closed" : "Open";
+                    }
+                    @status
+                </div>
+                <div>
+                    @if(!item.IsClosed)
+                    {
+                        <h2>Ongoing!!!</h2>
+                    }
+                </div>
+            </div>
+            <div>
+                @if (User.IsInRole("Admin"))
+                {
+                    if (DateTime.Now < item.StartDate)
+                    {
+                        <div class="col-6 text-end">
+                            <a asp-controller="Election" asp-action="Update" asp-route-id="@item.Id" class="btn btn-danger">
+                                <i class="bi bi-plus-circle"></i>Update
+                            </a>
+                        </div>
+                    }
+                }
+            </div>
+        </div>
+    </div>
+}
+@if (!Model.Any())
+{
+    <p>No Active Elections</p>
+}
+
+@{
+    var prevDisabled = !Model.HasPreviousPage ? "disabled" : "";
+    var nextDisabled = !Model.HasNextPage ? "disabled" : "";
+}
+
+<div class="d-flex justify-content-center">
+    <a asp-action="GetAll" asp-route-pageNumber="@(Model.PageIndex - 1)" class="btn btn-default @prevDisabled">
+        Previous
+    </a>
+    <div class="btn" style="cursor: default;">
+        Page @Model.PageIndex of @Model.TotalPages
+    </div>
+    <a asp-action="GetAll" asp-route-pageNumber="@(Model.PageIndex + 1)" class="btn btn-default @nextDisabled">
+        Next
+    </a>
+</div>

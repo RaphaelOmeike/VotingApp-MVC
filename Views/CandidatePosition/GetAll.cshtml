@@ -1,0 +1,137 @@
+﻿@model PaginatedList<VotingApp.Models.ResponseModels.CandidatePositionResponseModel>
+@{
+    ViewData["Title"] = "Index";
+}
+
+<div class="container p-1" style="overflow-x:auto;">
+    <div class="row pt-4">
+        <div class="col-6">
+            <h2 class="text-primary">Contestant List</h2>
+        </div>
+    </div>
+    <br /> <br />
+
+    <table class="table table-bordered table-striped">
+        <thead>
+            <tr>
+                <th>
+                    Name
+                </th>
+                <th>
+                    Email
+                </th>
+                <th>
+                    Gender
+                </th>
+                <th>
+                    Matric No
+                </th>
+                <th>
+                    Level
+                </th>
+                <th>
+                    CGPA
+                </th>
+                <th>
+                    Course Name
+                </th>
+                <th>
+                    Position Contested
+                </th>
+                <th>
+                    Election
+                </th>
+                <th>
+                    Manifesto
+                </th>
+                <th>
+                    Votes
+                </th>
+                <th>
+                    Winner
+                </th>
+                <th>
+                    Is Disqualified
+                </th>
+                <th></th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var obj in Model)
+            {
+                <tr>
+                    <td>
+                        @obj.Candidate?.Student?.Name
+                    </td>
+                    <td>
+                        @obj.Candidate?.Student?.Email
+                    </td>
+                    <td>
+                        @obj.Candidate?.Student?.Gender
+                    </td>
+                    <td>
+                        @obj.Candidate?.Student?.MatricNo
+                    </td>
+                    <td>
+                        @Convert.ToInt32(obj.Candidate?.Student?.Level)
+                    </td>
+                    <td>
+                        @obj.Candidate?.Student?.CGPA
+                    </td>
+                    <td>
+                        @obj.Candidate?.Student?.Course?.Name
+                    </td>
+                    <td>
+                        @obj.Position?.Name
+                    </td>
+                    <th>
+                        @obj.Position?.Election?.Name
+                    </th>
+                    <td>
+                        @obj.Statement
+                    </td>
+                    <td>
+                        @obj.Votes.Count
+                    </td>
+                    <td>
+                        @obj.Winner
+                    </td>
+                    <td>
+                        @obj.IsDisqualified
+                    </td>
+                   
+                    <td>
+                        <div class="container">
+                            <form asp-action="ChangeContestStatus" asp-controller="CandidatePosition" method="post">
+                                <input type="hidden" name="id" class="form-control" value="@obj.Id" />
+                                <input type="submit" class="btn btn-primary" style="display: inline-block; margin-top: 10px;" value="Change Contest Status" />
+                            </form>
+                        </div>
+                    </td>
+                </tr>
+            }
+        </tbody>
+    </table>
+</div>
+
+@if (!Model.Any())
+{
+    <p>No Rules</p>
+}
+
+@{
+    var prevDisabled = !Model.HasPreviousPage ? "disabled" : "";
+    var nextDisabled = !Model.HasNextPage ? "disabled" : "";
+}
+
+<div class="d-flex justify-content-center">
+    <a asp-action="GetAll" asp-route-pageNumber="@(Model.PageIndex - 1)" class="btn btn-default @prevDisabled">
+        Previous
+    </a>
+    <div class="btn" style="cursor: default;">
+        Page @Model.PageIndex of @Model.TotalPages
+    </div>
+    <a asp-action="GetAll" asp-route-pageNumber="@(Model.PageIndex + 1)" class="btn btn-default @nextDisabled">
+        Next
+    </a>
+</div>

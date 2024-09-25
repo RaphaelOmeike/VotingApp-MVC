@@ -1,0 +1,37 @@
+﻿@model VotingApp.Models.RequestModels.CourseRequestModel
+
+@{
+    ViewData["Title"] = "Update Course";
+}
+
+<h2 class="text-primary pt-3">@ViewData["Title"]</h2>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form asp-action="Update" method="post">
+            @* <div asp-validation-summary="ModelOnly" class="text-danger"></div> *@
+            <input type="hidden" name="id" value="@ViewBag.CourseId" />
+            <div class="form-group mb-3">
+                <label asp-for="Name" class="control-label"></label>
+                <input asp-for="Name" class="form-control" />
+                <span asp-validation-for="Name" class="text-danger"></span>
+            </div>
+            <div class="form-group mb-3">
+                <label asp-for="Description" class="control-label"></label>
+                <input asp-for="Description" class="form-control" />
+                <span asp-validation-for="Description" class="text-danger"></span>
+            </div>
+            <button type="submit" class="btn btn-primary" style="width:150px">Update</button>
+            <a asp-controller="Course" asp-action="GetAll" class="btn btn-secondary" style="width:150px">
+                Back to List
+            </a>
+        </form>
+    </div>
+</div>
+
+
+@section Scripts {
+    @{
+        <partial name="_ValidationScriptsPartial" />
+    }
+}

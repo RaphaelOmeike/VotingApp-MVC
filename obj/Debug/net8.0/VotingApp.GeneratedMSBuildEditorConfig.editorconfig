@@ -1,0 +1,183 @@
+is_global = true
+build_property.TargetFramework = net8.0
+build_property.TargetFramework = net8.0
+build_property.TargetPlatformMinVersion = 
+build_property.TargetPlatformMinVersion = 
+build_property.UsingMicrosoftNETSdkWeb = true
+build_property.UsingMicrosoftNETSdkWeb = true
+build_property.ProjectTypeGuids = 
+build_property.ProjectTypeGuids = 
+build_property.InvariantGlobalization = 
+build_property.InvariantGlobalization = 
+build_property.PlatformNeutralAssembly = 
+build_property.PlatformNeutralAssembly = 
+build_property.EnforceExtendedAnalyzerRules = 
+build_property.EnforceExtendedAnalyzerRules = 
+build_property._SupportedPlatformList = Linux,macOS,Windows
+build_property._SupportedPlatformList = Linux,macOS,Windows
+build_property.RootNamespace = VotingApp
+build_property.RootNamespace = VotingApp
+build_property.ProjectDir = C:\Users\USER\Desktop\clh lessons\VotingApp\
+build_property.EnableComHosting = 
+build_property.EnableGeneratedComInterfaceComImportInterop = 
+build_property.RazorLangVersion = 8.0
+build_property.SupportLocalizedComponentNames = 
+build_property.GenerateRazorMetadataSourceChecksumAttributes = 
+build_property.MSBuildProjectDirectory = C:\Users\USER\Desktop\clh lessons\VotingApp
+build_property._RazorSourceGeneratorDebug = 
+
+[C:/Users/USER/Desktop/clh lessons/VotingApp/Views/CandidatePosition/GetAll.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQ2FuZGlkYXRlUG9zaXRpb25cR2V0QWxsLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/USER/Desktop/clh lessons/VotingApp/Views/Candidate/GetAll.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQ2FuZGlkYXRlXEdldEFsbC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/USER/Desktop/clh lessons/VotingApp/Views/Course/Create.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQ291cnNlXENyZWF0ZS5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/USER/Desktop/clh lessons/VotingApp/Views/Course/GetAll.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQ291cnNlXEdldEFsbC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/USER/Desktop/clh lessons/VotingApp/Views/Course/Update.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQ291cnNlXFVwZGF0ZS5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/USER/Desktop/clh lessons/VotingApp/Views/Election/Contest.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRWxlY3Rpb25cQ29udGVzdC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/USER/Desktop/clh lessons/VotingApp/Views/Election/ContestantDetails.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRWxlY3Rpb25cQ29udGVzdGFudERldGFpbHMuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/USER/Desktop/clh lessons/VotingApp/Views/Election/Create.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRWxlY3Rpb25cQ3JlYXRlLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/USER/Desktop/clh lessons/VotingApp/Views/Election/Details.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRWxlY3Rpb25cRGV0YWlscy5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/USER/Desktop/clh lessons/VotingApp/Views/Election/GetAll.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRWxlY3Rpb25cR2V0QWxsLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/USER/Desktop/clh lessons/VotingApp/Views/Election/GetContestants.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRWxlY3Rpb25cR2V0Q29udGVzdGFudHMuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/USER/Desktop/clh lessons/VotingApp/Views/Election/MyCampaigns.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRWxlY3Rpb25cTXlDYW1wYWlnbnMuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/USER/Desktop/clh lessons/VotingApp/Views/Election/MyVotes.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRWxlY3Rpb25cTXlWb3Rlcy5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/USER/Desktop/clh lessons/VotingApp/Views/Election/Results.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRWxlY3Rpb25cUmVzdWx0cy5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/USER/Desktop/clh lessons/VotingApp/Views/Election/Update.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRWxlY3Rpb25cVXBkYXRlLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/USER/Desktop/clh lessons/VotingApp/Views/Election/UpdateContest.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRWxlY3Rpb25cVXBkYXRlQ29udGVzdC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/USER/Desktop/clh lessons/VotingApp/Views/Home/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxJbmRleC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/USER/Desktop/clh lessons/VotingApp/Views/Home/Privacy.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxQcml2YWN5LmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/USER/Desktop/clh lessons/VotingApp/Views/Position/Create.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUG9zaXRpb25cQ3JlYXRlLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/USER/Desktop/clh lessons/VotingApp/Views/Position/GetAll.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUG9zaXRpb25cR2V0QWxsLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/USER/Desktop/clh lessons/VotingApp/Views/Position/Update.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUG9zaXRpb25cVXBkYXRlLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/USER/Desktop/clh lessons/VotingApp/Views/Rule/Create.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUnVsZVxDcmVhdGUuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/USER/Desktop/clh lessons/VotingApp/Views/Rule/GetAll.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUnVsZVxHZXRBbGwuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/USER/Desktop/clh lessons/VotingApp/Views/Rule/Update.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUnVsZVxVcGRhdGUuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/USER/Desktop/clh lessons/VotingApp/Views/Session/Create.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2Vzc2lvblxDcmVhdGUuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/USER/Desktop/clh lessons/VotingApp/Views/Session/GetAll.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2Vzc2lvblxHZXRBbGwuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/USER/Desktop/clh lessons/VotingApp/Views/Session/Update.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2Vzc2lvblxVcGRhdGUuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/USER/Desktop/clh lessons/VotingApp/Views/Shared/Error.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXEVycm9yLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/USER/Desktop/clh lessons/VotingApp/Views/Shared/_Notification.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXF9Ob3RpZmljYXRpb24uY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/USER/Desktop/clh lessons/VotingApp/Views/Shared/_ValidationScriptsPartial.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXF9WYWxpZGF0aW9uU2NyaXB0c1BhcnRpYWwuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/USER/Desktop/clh lessons/VotingApp/Views/Student/Create.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU3R1ZGVudFxDcmVhdGUuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/USER/Desktop/clh lessons/VotingApp/Views/Student/GetAll.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU3R1ZGVudFxHZXRBbGwuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/USER/Desktop/clh lessons/VotingApp/Views/Student/Update.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU3R1ZGVudFxVcGRhdGUuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/USER/Desktop/clh lessons/VotingApp/Views/User/GetAll.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcVXNlclxHZXRBbGwuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/USER/Desktop/clh lessons/VotingApp/Views/User/Login.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcVXNlclxMb2dpbi5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/USER/Desktop/clh lessons/VotingApp/Views/User/UpdatePassword.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcVXNlclxVcGRhdGVQYXNzd29yZC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/USER/Desktop/clh lessons/VotingApp/Views/_ViewImports.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcX1ZpZXdJbXBvcnRzLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/USER/Desktop/clh lessons/VotingApp/Views/_ViewStart.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcX1ZpZXdTdGFydC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/USER/Desktop/clh lessons/VotingApp/Views/Shared/_Layout.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXF9MYXlvdXQuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = b-n1qjbkbtn1

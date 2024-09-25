@@ -1,0 +1,118 @@
+﻿@model PaginatedList<VotingApp.Models.ResponseModels.CandidateResponseModel>
+@{
+    ViewData["Title"] = "Index";
+}
+
+<div class="container p-3">
+    <div class="row pt-4">
+        <div class="col-6">
+            <h2 class="text-primary">Student List</h2>
+        </div>
+        <div class="col-6">
+            <div class="container">
+                <form asp-action="ReadStudents" method="post" enctype="multipart/form-data">
+                    <label><h6>Upload file to register students</h6></label>
+                    <input type="file" name="studentFile" class="form-control" accept="text/*" style="width: 70%" />@* continue *@
+                    <input type="submit" class="btn btn-secondary" style="display: inline-block; margin-top: 10px;" />
+                </form>
+            </div>
+            <div class="col-6 text-end">
+                <a asp-controller="Student" asp-action="Create" class="btn btn-primary">
+                    <i class="bi bi-plus-circle"></i> &nbsp; Create New Student
+                </a>
+            </div>
+        </div>
+        <br /> <br />
+
+        <table class="table table-bordered table-striped">
+            <thead>
+                <tr>
+                    <th>
+                        Name
+                    </th>
+                    <th>
+                        Gender
+                    </th>
+                    <th>
+                        Email
+                    </th>
+                    <th>
+                        Matric No
+                    </th>
+                    <th>
+                        Level
+                    </th>
+                    <th>
+                        CGPA
+                    </th>
+                    <th>
+                        Course Name
+                    </th>
+                    <th>
+                        Positions
+                    </th>
+                    <th></th>
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (var obj in Model)
+                {
+                    <tr>
+                        <td>
+                            @obj.Student?.Name
+                        </td>
+                        <td>
+                            @obj.Student?.Gender.ToString()
+                        </td>
+                        <td>
+                            @obj.Student?.Email
+                        </td>
+                        <td>
+                            @obj.Student?.MatricNo
+                        </td>
+                        <td>
+                            @obj.Student?.Level
+                        </td>
+                        <td>
+                            @obj.Student?.CGPA
+                        </td>
+                        <td>
+                            @obj.Student?.Course.Name
+                        </td>
+                        <td>
+                            <ul>
+                                @foreach (var contestant in obj.CandidatePositions)
+                                {
+                                    <li>
+                                        @contestant.Position?.Name - @contestant.Votes.Count vote(s)
+                                    </li>
+                                }
+                            </ul>
+                        </td>
+                    </tr>
+                }
+            </tbody>
+        </table>
+    </div>
+
+    @if (!Model.Any())
+    {
+        <p>No Students</p>
+    }
+
+    @{
+        var prevDisabled = !Model.HasPreviousPage ? "disabled" : "";
+        var nextDisabled = !Model.HasNextPage ? "disabled" : "";
+    }
+
+    <div class="d-flex justify-content-center">
+        <a asp-action="GetALl" asp-route-pageNumber="@(Model.PageIndex - 1)" class="btn btn-default @prevDisabled">
+            Previous
+        </a>
+        <div class="btn" style="cursor: default;">
+            Page @Model.PageIndex of @Model.TotalPages
+        </div>
+        <a asp-action="GetAll" asp-route-pageNumber="@(Model.PageIndex + 1)" class="btn btn-default @nextDisabled">
+            Next
+        </a>
+    </div>

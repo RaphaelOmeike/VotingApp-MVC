@@ -1,0 +1,108 @@
+﻿@model PaginatedList<VotingApp.Models.ResponseModels.PositionResponseModel>
+@{
+    ViewData["Title"] = "Index";
+}
+
+<div class="container p-3">
+    <div class="row pt-4">
+        <div class="col-6">
+            <h2 class="text-primary">Position List</h2>
+        </div>
+        <div class="col-6 text-end">
+            <a asp-controller="Position" asp-action="Create" class="btn btn-primary">
+                <i class="bi bi-plus-circle"></i> &nbsp; Create New Position
+            </a>
+        </div>
+    </div>
+    <br /> <br />
+
+    <table class="table table-bordered table-striped">
+        <thead>
+            <tr>
+                <th>
+                    Name
+                </th>
+                <th>
+                    Description
+                </th>
+                <th>
+                    Is Available
+                </th>
+                <th>
+                    Election
+                </th>
+                <th>
+                    Rule
+                </th>
+                <th>
+                    Contestants
+                </th>
+                <th></th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var obj in Model)
+            {
+                <tr>
+                    <td>
+                        @obj.Name
+                    </td>
+                    <td>
+                        @obj.Description
+                    </td>
+                    <td>
+                        @obj.IsAvailable
+                    </td>
+                    <td>
+                        @obj.Election?.Name
+                            
+                    </td>
+                    <td>
+                        @obj.Rule?.Name
+                        
+                    </td>
+                    <td>
+                        <ul>
+                            @foreach (var contestant in obj.Contestants)
+                            {
+                                @if (contestant.Candidate == null)
+                                {
+                                    continue;
+                                }
+                                <li>@contestant.Candidate?.Student?.Name</li>
+                            }
+                        </ul>
+                    </td>
+                    <td>
+                        <div class="w-75 btn-group" role="group">
+                            <a asp-controller="Position" asp-action="Update" asp-route-id="@obj.Id"
+                               class="btn btn-primary mx-0"><i class="bi bi-pencil-square"></i> Update</a>
+                        </div>
+                    </td>
+                </tr>
+            }
+        </tbody>
+    </table>
+</div>
+
+@if (!Model.Any())
+{
+    <p>No Active Positions</p>
+}
+
+@{
+    var prevDisabled = !Model.HasPreviousPage ? "disabled" : "";
+    var nextDisabled = !Model.HasNextPage ? "disabled" : "";
+}
+
+<div class="d-flex justify-content-center">
+    <a asp-action="GetAll" asp-route-pageNumber="@(Model.PageIndex - 1)" class="btn btn-default @prevDisabled">
+        Previous
+    </a>
+    <div class="btn" style="cursor: default;">
+        Page @Model.PageIndex of @Model.TotalPages
+    </div>
+    <a asp-action="GetAll" asp-route-pageNumber="@(Model.PageIndex + 1)" class="btn btn-default @nextDisabled">
+        Next
+    </a>
+</div>

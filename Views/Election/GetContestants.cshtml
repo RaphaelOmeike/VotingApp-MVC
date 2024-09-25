@@ -1,0 +1,71 @@
+﻿@model VotingApp.PaginatedList<VotingApp.Models.ResponseModels.CandidatePositionResponseModel>
+@{
+    ViewData["Title"] = "Index";
+}
+<div class="col-6">
+    <a asp-controller="Election" asp-action="Details" asp-route-electionId="@ViewBag.ElectionId" class="btn btn-primary">
+        <i class="bi bi-plus-circle"></i> Back
+    </a>
+@if (ViewBag.CanContest ?? false)
+{
+    <div class="col-6 text-end">
+        <a asp-controller="Election" asp-action="Contest" asp-route-studentId="@ViewBag.StudentId" asp-route-positionId="@ViewBag.PositionId" class="btn btn-secondary">
+            <i class="bi bi-plus-circle"></i> &nbsp; Contest
+        </a>
+    </div>
+}
+</div>
+@foreach (var item in Model)
+{
+    <h4 style="text-align: center;">@item.Position?.Election?.Name Session</h4>
+    <div class="container" style="background-color: rgba(130, 129, 133, 0.6); margin-top: 50px; margin-bottom: 50px; padding: 20px; border-radius: 10px;">
+        <div class="row">
+            <div class="col col-xs-6 col-lg-5">
+                <img src="~/Images/@item.ImageUrl" style="max-width:400px; max-height: 400px;" />
+            </div>
+            <div class="col col-xs-6 col-lg-7">
+                <h5><a asp-action="ContestantDetails" asp-route-candidatePositionId="@item.Id" asp-controller="Election" style="color:black;">VOTE @item.Candidate?.Student?.Name.ToUpper() FOR @item.Position?.Name.ToUpper()</a></h5>
+                <div>
+                    Manifesto: @item.Statement
+                </div>
+                <div>
+                    <h3>Name: @item.Candidate?.Student?.Name, Gender: @item.Candidate?.Student?.Gender</h3>
+                </div>
+                <div>
+                    <h3>Course: @item.Candidate?.Student?.Course?.Name</h3>
+                </div>
+                <div>
+                    Matric No: @item.Candidate?.Student?.MatricNo
+                </div>
+                <div>
+                    Contesting for the position of @item.Position?.Name
+                </div>
+                <div>
+                    @item.Candidate?.Student?.Name has @item.Votes.Count vote(s).
+                </div>
+            </div>
+            <div><a asp-action="Results" asp-route-electionId="@item.Position?.ElectionId">Resultz</a></div>
+        </div>
+    </div>
+}
+@if (!Model.Any())
+{
+    <p>No Active Contestants</p>
+}
+
+@{
+    var prevDisabled = !Model.HasPreviousPage ? "disabled" : "";
+    var nextDisabled = !Model.HasNextPage ? "disabled" : "";
+}
+
+<div class="d-flex justify-content-center">
+    <a asp-action="GetContestants" asp-route-PositionId="@ViewBag.PositionId" asp-route-pageNumber="@(Model.PageIndex - 1)" class="btn btn-default @prevDisabled">
+        Previous
+    </a>
+    <div class="btn" style="cursor: default;">
+        Page @Model.PageIndex of @Model.TotalPages
+    </div>
+    <a asp-action="GetContestants" asp-route-PositionId="@ViewBag.PositionId" asp-route-pageNumber="@(Model.PageIndex + 1)" class="btn btn-default @nextDisabled">
+        Next
+    </a>
+</div>

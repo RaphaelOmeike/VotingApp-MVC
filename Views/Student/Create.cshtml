@@ -1,0 +1,78 @@
+﻿@model VotingApp.Models.RequestModels.StudentRequestModel
+
+@{
+    ViewData["Title"] = "Create Student";
+}
+
+<h2 class="text-primary pt-3">@ViewData["Title"]</h2>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form asp-action="Create" method="post">
+            @* <div asp-validation-summary="ModelOnly" class="text-danger"></div> *@
+            <div class="form-group mb-3">
+                <label asp-for="Name" class="control-label"></label>
+                <input asp-for="Name" class="form-control" />
+                <span asp-validation-for="Name" class="text-danger"></span>
+            </div>
+            <div class="form-group mb-3">
+                <label asp-for="Email" class="control-label"></label>
+                <input asp-for="Email" class="form-control" />
+                <span asp-validation-for="Email" class="text-danger"></span>
+            </div>
+            <div class="form-group mb-3">
+                <label asp-for="MatricNo" class="control-label"></label>
+                <input asp-for="MatricNo" class="form-control" />
+                <span asp-validation-for="MatricNo" class="text-danger"></span>
+            </div>
+            <div class="form-group mb-3">
+                <label asp-for="Gender"></label>
+                <select asp-for="Gender" class="form-control">
+                    <option value="">Select Gender</option>
+                    <option value="Male">Male</option>
+                    <option value="Female">Female</option>
+                </select>
+                <span asp-validation-for="Gender" class="text-danger"></span>
+            </div>
+            <div class="form-group mb-3">
+                <label asp-for="Level"></label>
+                <select asp-for="Level" class="form-control">
+                    <option value="">Select Level</option>
+                    <option value="One">100</option>
+                    <option value="Two">200</option>
+                    <option value="Three">300</option>
+                    <option value="Four">400</option>
+                    <option value="Five">500</option>
+                </select>
+                <span asp-validation-for="Level" class="text-danger"></span>
+            </div>
+            <div class="form-group mb-3">
+                <label asp-for="CGPA" class="control-label"></label>
+                <input asp-for="CGPA" class="form-control" />
+                <span asp-validation-for="CGPA" class="text-danger"></span>
+            </div>
+            <div class="form-group mb-3">
+                <label asp-for="Password" class="control-label"></label>
+                <input asp-for="Password" type="password" class="form-control" />
+                <span asp-validation-for="Password" class="text-danger"></span>
+            </div>
+            <div class="form-group mb-3">
+                <label for="CourseId">Course</label>
+                <select asp-for="CourseId" asp-items="ViewBag.Course" class="form-control"></select>
+                <span asp-validation-for="CourseId" class="text-danger"></span>
+            </div>
+            
+            <button type="submit" class="btn btn-primary" style="width:150px">Create</button>
+            <a asp-controller="Student" asp-action="GetAll" class="btn btn-secondary" style="width:150px">
+                Back to List
+            </a>
+        </form>
+    </div>
+</div>
+
+
+@section Scripts {
+    @{
+        <partial name="_ValidationScriptsPartial" />
+    }
+}

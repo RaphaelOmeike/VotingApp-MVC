@@ -1,0 +1,121 @@
+﻿@model PaginatedList<VotingApp.Models.ResponseModels.RuleResponseModel>
+@{
+    ViewData["Title"] = "Index";
+}
+
+<div class="container p-3">
+    <div class="row pt-4">
+        <div class="col-6">
+            <h2 class="text-primary">Rule List</h2>
+        </div>
+        <div class="col-6 text-end">
+            <a asp-controller="Rule" asp-action="Create" class="btn btn-primary">
+                <i class="bi bi-plus-circle"></i> &nbsp; Create New Rule
+            </a>
+        </div>
+    </div>
+    <br /> <br />
+
+    <table class="table table-bordered table-striped">
+        <thead>
+            <tr>
+                <th>
+                    Name
+                </th>
+                <th>
+                    Gender
+                </th>
+                <th>
+                    Course Name
+                </th>
+                <th>
+                    Minimum CGPA
+                </th>
+                <th>
+                    Level
+                </th>
+                <th>
+                    Positions
+                </th>
+                <th>
+                    Elections
+                </th>
+                <th></th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var obj in Model)
+            {
+                <tr>
+                    <td>
+                        @obj.Name
+                    </td>
+                    <td>
+                        @obj.Gender.ToString()
+                    </td>
+                    <td>
+                        
+                        @obj.Course?.Name
+                        
+                    </td>
+                    <td>
+                        @obj.MinCGPA
+                    </td>
+                    <td>
+                        @Convert.ToInt32(obj.MinLevel)
+                        &nbsp; &ndash; &nbsp;
+                        @if (obj.MinLevel != obj.MaxLevel)
+                        {
+                            @Convert.ToInt32(obj.MaxLevel)
+                        }
+                    </td>
+                    <td>
+                        <ul>
+                            @foreach (var position in obj.Positions)
+                            {
+                                <li>@position.Name - @position?.Election?.Name</li>
+                            }
+
+                        </ul>
+                    </td>
+                    <td>
+                        <ul>
+                            @foreach (var election in obj.Elections)
+                            {
+                                <li>@election.Name</li>
+                            }
+                        </ul>
+                    </td>
+                    <td>
+                        <div class="w-75 btn-group" role="group">
+                            <a asp-controller="Rule" asp-action="Update" asp-route-id="@obj.Id"
+                               class="btn btn-primary mx-0"><i class="bi bi-pencil-square"></i> Update</a>
+                        </div>
+                    </td>
+                </tr>
+            }
+        </tbody>
+    </table>
+</div>
+
+@if (!Model.Any())
+{
+    <p>No Rules</p>
+}
+
+@{
+    var prevDisabled = !Model.HasPreviousPage ? "disabled" : "";
+    var nextDisabled = !Model.HasNextPage ? "disabled" : "";
+}
+
+<div class="d-flex justify-content-center">
+    <a asp-action="GetAll" asp-route-pageNumber="@(Model.PageIndex - 1)" class="btn btn-default @prevDisabled">
+        Previous
+    </a>
+    <div class="btn" style="cursor: default;">
+        Page @Model.PageIndex of @Model.TotalPages
+    </div>
+    <a asp-action="GetAll" asp-route-pageNumber="@(Model.PageIndex + 1)" class="btn btn-default @nextDisabled">
+        Next
+    </a>
+</div>

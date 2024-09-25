@@ -1,0 +1,120 @@
+﻿@using System.Security.Claims
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>@ViewData["Title"] - VotingApp</title>
+    <link rel="stylesheet" href="~/css/bootswatchTheme.css" />
+    <link rel="stylesheet" href="~/css/site.css" asp-append-version="true" />
+    <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.css" />
+    <link rel="stylesheet" href="~/VotingApp.styles.css" asp-append-version="true" />
+    <link rel="stylesheet" href="~/css/landing.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css" integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    
+</head>
+<body>
+    <header>
+        <nav class="navbar navbar-expand-lg" style="background-color: #25be3c;" data-bs-theme="dark">
+            <div class="container-fluid">
+                <a class="navbar-brand" href="#">Voting App</a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarColor02" aria-controls="navbarColor02" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarColor02">
+                    <ul class="navbar-nav me-auto">
+                        <li class="nav-item">
+                            <a class="nav-link" asp-area="" asp-controller="Home" asp-action="Index">Home</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" asp-area="" asp-controller="Election" asp-action="GetAll"><i class="fa-solid fa-check-to-slot"></i> &nbsp; Elections</a>
+                        </li>
+                        <li class="nav-item" style="margin: auto">
+                            <form asp-controller="Election" asp-action="GetAll" method="get">
+                                <input style="width: 80%; float: left; border-top-left-radius: 20px; border-bottom-left-radius: 20px; background-color: whitesmoke; color: black" type="text" name="searchString" class="form-control" />
+                                <button style="width: 20%; float: left; border: none; background-color: transparent; height: 40px" type=submit><i class="fa fa-search"></i></button>
+                            </form>
+                        </li>
+                        @if (User.IsInRole("Student"))
+                        {
+                            <li class="nav-item">
+                                <a class="nav-link" asp-area="" asp-controller="Election" asp-action="MyVotes"><i class="fa-solid fa-circle-check"></i>&nbsp; My Votes</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" asp-area="" asp-controller="Election" asp-action="MyCampaigns"><i class="fa-solid fa-pen-to-square"></i> &nbsp; My Campaigns</a>
+                            </li>
+                        }
+                        
+                        @if (User.IsInRole("Admin"))
+                        {
+                            <li class="nav-item">
+                                <a class="nav-link" asp-area="" asp-controller="CandidatePosition" asp-action="GetAll">Contestants</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" asp-area="" asp-controller="Course" asp-action="GetAll">Course</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" asp-area="" asp-controller="Rule" asp-action="GetAll">Rule</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" asp-area="" asp-controller="Student" asp-action="GetAll">Student</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" asp-area="" asp-controller="Session" asp-action="GetAll">Session</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" asp-area="" asp-controller="Position" asp-action="GetAll">Position</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" asp-area="" asp-controller="User" asp-action="GetAll">User</a>
+                            </li>
+                            
+                        }
+                    </ul>
+                    @* search bar *@
+                    
+                </div>
+                @if (User.Identity.IsAuthenticated)
+                {
+                    <ul class="navbar-nav me-auto">
+                        <li class="nav-item text-end">
+                            <a class="nav-link" asp-area="" asp-controller="User" asp-action="UpdatePassword">
+                                Welcome, @User.FindFirstValue(ClaimTypes.Email)!
+                            </a>
+                        </li>
+                        <li class="nav-item text-end">
+                            <a class="nav-link" asp-area="" asp-controller="User" asp-action="Logout">Logout</a>
+                        </li>
+
+                    </ul>
+
+                }
+                else
+                {
+                    <ul class="navbar-nav me-auto">
+                        <li class="nav-item">
+                            <a class="nav-link" asp-area="" asp-controller="User" asp-action="Login">Login</a>
+                        </li>
+                    </ul>
+                }
+            </div>
+        </nav>
+        
+    </header>
+    <div class="container">
+        <main role="main" class="pb-3">
+            <partial name="_Notification" />
+            @RenderBody()
+        </main>
+    </div>
+
+    <footer class="border-top footer text-muted">
+        <div class="container">
+            &copy; 2024 - VotingApp - <a asp-area="" asp-controller="Home" asp-action="Privacy">Privacy</a>
+        </div>
+    </footer>
+    <script src="~/lib/jquery/dist/jquery.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.min.js" integrity="sha384-0pUGZvbkm6XF6gxjEnlmuGrJXVbNuzT9qBBavbLwCsOGabYfZo0T0to5eqruptLy" crossorigin="anonymous"></script>
+    @await RenderSectionAsync("Scripts", required: false)
+</body>
+</html>

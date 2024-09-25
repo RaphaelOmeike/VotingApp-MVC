@@ -1,0 +1,10 @@
+Mary Abiola,mary@gmail.com,22CH031924,2,300,4.50
+Alao Emmanuel,ealao@gmail.com,22CG031927,1,300,4.69
+Ighodalo Happiness,ighodaloh@gmail.com,22CG031922,2,200,4.11
+Mangai Vincent,mvincey@gmail.com,22CG032942,1,200,3.10
+Soyombo Ope,opes@gmail.com,22CB031925,2,100,2.20
+Olaniyi Victor,ovictor@gmail.com,22CB031929,1,100,3.90
+Lateef Abimbola,alateef@gmail.com,22CA031926,2,500,4.19
+Billy Wright,bwright@gmail.com,22CH031924,1,500,4.96
+Olalekan Ade,olalekan@gmail.com,22CB031922,1,400,3.57
+Olubunmi Zainab,ozainab@gmail.com,22CB031932,2,400,3.60
