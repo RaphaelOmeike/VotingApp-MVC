@@ -23,7 +23,7 @@ Voting App is a comprehensive solution that tackles the critical issue faced dur
 ## 📸 Screenshots
 
 ### Landing Page
-![Landing Page](/wwwroot/Screenshots/landing.png)
+![Landing Page](VotingApp-MVC/wwwroot/Screenshots/landing.png)
 
 ### Admin Dashboard
 ![Admin Dashboard](/wwwroot/Screenshots/admin.png)
