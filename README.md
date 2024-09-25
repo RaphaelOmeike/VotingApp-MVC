@@ -1,6 +1,6 @@
 # Food Connect
 
-Welcome to **Voting App**, a platform designed to make the voting space digitized and makes the balloting process easier at the point of a click. 
+Welcome to **Voting App**, a platform designed to make the voting space digitized and eases the balloting process at the point of a click. 
 
 ## 🌟 Overview
 
@@ -23,7 +23,7 @@ Voting App is a comprehensive solution that tackles the critical issue faced dur
 ## 📸 Screenshots
 
 ### Landing Page
-![Landing Page](VotingApp/wwwroot/Screenshots/landing.png)
+![Landing Page](/wwwroot/Screenshots/landing.png)
 
 ### Admin Dashboard
 ![Admin Dashboard](/wwwroot/Screenshots/admin.png)
