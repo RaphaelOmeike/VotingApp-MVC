@@ -61,6 +61,10 @@
       "PackagePath": "staticwebassets\\Screenshots\\elections.png"
     },
     {
+      "Id": "C:\\Users\\USER\\Desktop\\clh lessons\\VotingApp\\wwwroot\\Screenshots\\landing.png",
+      "PackagePath": "staticwebassets\\Screenshots\\landing.png"
+    },
+    {
       "Id": "C:\\Users\\USER\\Desktop\\clh lessons\\VotingApp\\wwwroot\\Screenshots\\mycamps.png",
       "PackagePath": "staticwebassets\\Screenshots\\mycamps.png"
     },
@@ -87,6 +91,10 @@
     {
       "Id": "C:\\Users\\USER\\Desktop\\clh lessons\\VotingApp\\wwwroot\\Screenshots\\votecasted.png",
       "PackagePath": "staticwebassets\\Screenshots\\votecasted.png"
+    },
+    {
+      "Id": "C:\\Users\\USER\\Desktop\\clh lessons\\VotingApp\\wwwroot\\Screenshots\\votefailed.png",
+      "PackagePath": "staticwebassets\\Screenshots\\votefailed.png"
     },
     {
       "Id": "C:\\Users\\USER\\Desktop\\clh lessons\\VotingApp\\wwwroot\\Stu_Files\\mstu.txt",
@@ -223,38 +231,6 @@
     {
       "Id": "C:\\Users\\USER\\Desktop\\clh lessons\\VotingApp\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.rtl.min.css.map",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.rtl.min.css.map"
-    },
-    {
-      "Id": "C:\\Users\\USER\\Desktop\\clh lessons\\VotingApp\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.css",
-      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap.css"
-    },
-    {
-      "Id": "C:\\Users\\USER\\Desktop\\clh lessons\\VotingApp\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.css.map",
-      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap.css.map"
-    },
-    {
-      "Id": "C:\\Users\\USER\\Desktop\\clh lessons\\VotingApp\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.min.css",
-      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap.min.css"
-    },
-    {
-      "Id": "C:\\Users\\USER\\Desktop\\clh lessons\\VotingApp\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.min.css.map",
-      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap.min.css.map"
-    },
-    {
-      "Id": "C:\\Users\\USER\\Desktop\\clh lessons\\VotingApp\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.rtl.css",
-      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap.rtl.css"
-    },
-    {
-      "Id": "C:\\Users\\USER\\Desktop\\clh lessons\\VotingApp\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.rtl.css.map",
-      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap.rtl.css.map"
-    },
-    {
-      "Id": "C:\\Users\\USER\\Desktop\\clh lessons\\VotingApp\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.rtl.min.css",
-      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap.rtl.min.css"
-    },
-    {
-      "Id": "C:\\Users\\USER\\Desktop\\clh lessons\\VotingApp\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.rtl.min.css.map",
-      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap.rtl.min.css.map"
     },
     {
       "Id": "C:\\Users\\USER\\Desktop\\clh lessons\\VotingApp\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.bundle.js",

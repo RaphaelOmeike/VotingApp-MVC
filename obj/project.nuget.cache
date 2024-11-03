@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "dgSpecHash": "JW7K1HbzcCQAI66+WV4RWocrb3Kby4FjQISHjn7fAh/gaQEUb2uVVLHiOBs1Wzxiyg76HPkPsSTYBjhoW/0QMQ==",
+  "dgSpecHash": "ACPzwPhLt98=",
   "success": true,
   "projectFilePath": "C:\\Users\\USER\\Desktop\\clh lessons\\VotingApp\\VotingApp.csproj",
   "expectedPackageFiles": [
@@ -164,5 +164,12 @@
     "C:\\Users\\USER\\.nuget\\packages\\system.windows.extensions\\8.0.0\\system.windows.extensions.8.0.0.nupkg.sha512",
     "C:\\Users\\USER\\.nuget\\packages\\zstdsharp.port\\0.8.0\\zstdsharp.port.0.8.0.nupkg.sha512"
   ],
-  "logs": []
+  "logs": [
+    {
+      "code": "NU1900",
+      "level": "Warning",
+      "warningLevel": 1,
+      "message": "Error occurred while getting package vulnerability data: Unable to load the service index for source https://api.nuget.org/v3/index.json."
+    }
+  ]
 }
